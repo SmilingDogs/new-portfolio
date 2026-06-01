@@ -1,0 +1,20 @@
+# OS / editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Root-level local env files
+.env
+.env.*
+!.env.example
+
+# Logs created at the repo root
+*.log
+
+# Common build and cache folders if created at the repo root
+dist/
+coverage/
+.cache/
+tmp/
+temp/
