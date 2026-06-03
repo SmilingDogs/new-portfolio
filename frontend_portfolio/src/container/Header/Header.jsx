@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import images from "../../constants/images";
+import { AppWrap } from "../../wrapper";
 import "./Header.scss";
 
 const scaleVariants = {
@@ -11,9 +12,13 @@ const scaleVariants = {
       ease: "easeInOut",
     },
   },
+  viewport: {
+    once: false,
+    amount: 0.25,
+  },
 };
 
-const Header = () => {
+const HeaderContent = () => {
   return (
     <div className="app__header app__flex">
       <motion.div
@@ -53,6 +58,7 @@ const Header = () => {
       <motion.div
         variants={scaleVariants}
         whileInView={scaleVariants.whileInView}
+        viewport={scaleVariants.viewport}
         className="app__header-circles"
       >
         {[images.html, images.redux, images.sass].map((circle, index) => (
@@ -64,5 +70,7 @@ const Header = () => {
     </div>
   );
 };
+
+const Header = AppWrap(HeaderContent, "home");
 
 export default Header;
