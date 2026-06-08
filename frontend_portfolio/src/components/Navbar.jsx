@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 
-import images from "../constants/images";
 import "./Navbar.scss";
 
 const navbarTabs = ["home", "about", "work", "skills", "contact"];
@@ -12,9 +11,6 @@ const Navbar = () => {
 
   return (
     <nav className="app__navbar">
-      <div className="app__navbar-logo">
-        <img src={images.logo} alt="logo" />
-      </div>
       <ul className="app__navbar-links">
         {navbarTabs.map((item) => (
           <li key={`link-${item}`} className="app__flex p-text">
