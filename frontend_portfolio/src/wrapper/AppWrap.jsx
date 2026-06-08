@@ -1,9 +1,9 @@
 import { NavigationDots, SocialMedia } from "../components";
 
-const AppWrap = (Component, sectionName, ClassNames) =>
+const AppWrap = (Component, sectionName, ...classNames) =>
   function HOC() {
     return (
-      <div id={sectionName} className={`app__container ${ClassNames}`}>
+      <div id={sectionName} className={`app__container ${classNames.join(' ')}`}>
         <SocialMedia />
 
         <div className="app__wrapper app__flex">

@@ -62,23 +62,33 @@ const WorkContent = () => {
       >
         {filterWork.map((work, index) => (
           <div className="app__work-item app__flex" key={index}>
-            <div className="app__work-img app__flex">
+            <motion.div
+              className="app__work-img app__flex"
+              initial="rest"
+              whileHover="hover"
+              animate="rest"
+            >
               <img src={urlFor(work.imgUrl)} alt={work.name} />
 
               <motion.div
-                whileHover={{ opacity: [0, 1] }}
+                variants={{
+                  rest: { opacity: 0 },
+                  hover: { opacity: 1 },
+                }}
                 transition={{
-                  duration: 0.25,
+                  duration: 0.2,
                   ease: "easeInOut",
-                  staggerChildren: 0.5,
+                  staggerChildren: 0.08,
                 }}
                 className="app__work-hover app__flex"
               >
                 <a href={work.projectLink} target="_blank" rel="noreferrer">
                   <motion.div
-                    whileInView={{ scale: [0, 1] }}
-                    whileHover={{ scale: [1, 0.9] }}
-                    transition={{ duration: 0.25 }}
+                    variants={{
+                      rest: { scale: 1, opacity: 0 },
+                      hover: { scale: 1, opacity: 1 },
+                    }}
+                    transition={{ duration: 0.18, ease: "easeOut" }}
                     className="app__flex"
                   >
                     <AiFillEye />
@@ -86,16 +96,18 @@ const WorkContent = () => {
                 </a>
                 <a href={work.codeLink} target="_blank" rel="noreferrer">
                   <motion.div
-                    whileInView={{ scale: [0, 1] }}
-                    whileHover={{ scale: [1, 0.9] }}
-                    transition={{ duration: 0.25 }}
+                    variants={{
+                      rest: { scale: 1, opacity: 0 },
+                      hover: { scale: 1, opacity: 1 },
+                    }}
+                    transition={{ duration: 0.18, ease: "easeOut" }}
                     className="app__flex"
                   >
                     <AiFillGithub />
                   </motion.div>
                 </a>
               </motion.div>
-            </div>
+            </motion.div>
 
             <div className="app__work-content app__flex">
               <h4 className="bold-text">{work.title}</h4>

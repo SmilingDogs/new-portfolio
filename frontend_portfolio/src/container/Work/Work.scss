@@ -107,7 +107,7 @@
 
   border-radius: 0.5rem;
   opacity: 0;
-  transition: all 0.3s ease;
+  pointer-events: none;
 
   div {
     width: 50px;
@@ -120,6 +120,7 @@
     font-family: var(--font-base);
     font-weight: 800;
     cursor: pointer;
+    pointer-events: auto;
     transition: all 0.3s ease;
 
     svg {
