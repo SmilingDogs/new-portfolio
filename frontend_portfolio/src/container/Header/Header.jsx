@@ -61,7 +61,7 @@ const HeaderContent = () => {
         viewport={scaleVariants.viewport}
         className="app__header-circles"
       >
-        {[images.html, images.redux, images.sass].map((circle, index) => (
+        {[images.css, images.javascript, images.react].map((circle, index) => (
           <div className="circle-cmp app__flex" key={`circle-${index}`}>
             <img src={circle} alt="profile_bg" />
           </div>
