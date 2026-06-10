@@ -12,8 +12,14 @@ const SkillsContent = () => {
   const [experiences, setExperiences] = useState([]);
 
   useEffect(() => {
-    client.fetch(experiencesQuery).then((data) => setExperiences(data));
-    client.fetch(skillsQuery).then((data) => setSkills(data));
+    Promise.all([client.fetch(experiencesQuery), client.fetch(skillsQuery)])
+      .then(([experiences, skills]) => {
+        setExperiences(experiences);
+        setSkills(skills);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   }, []);
 
   return (
