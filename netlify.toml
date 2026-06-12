@@ -1,0 +1,10 @@
+
+[build]
+  command = "npm install && npm run build"
+  publish = "frontend_portfolio/dist"
+  base = "frontend_portfolio"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
