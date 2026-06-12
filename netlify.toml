@@ -1,7 +1,7 @@
 
 [build]
   command = "npm install && npm run build"
-  publish = "frontend_portfolio/dist"
+  publish = "dist"
   base = "frontend_portfolio"
 
 [[redirects]]
